@@ -1,0 +1,15 @@
+{
+  "name": "webapp",
+  "version": "0.0.1",
+  "description": "静远实习客户端",
+  "main": "main.js",
+  "repository": "https://github.com/yang-520199/shixi",
+  "author": "winnerwinter1998 && yang-520199",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+},
+  "devDependencies": {
+    "electron": "^10.1.3"
+  }
+}
