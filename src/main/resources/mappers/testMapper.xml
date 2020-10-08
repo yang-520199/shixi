@@ -17,4 +17,7 @@
     <select id="findByColumn" parameterType="Search" resultType="testData">
         select top 20 ${selectKind},ReportTime  from ${selectArea} where convert(date,ReportTime) like #{selectDate}
     </select>
+    <select id="findByColumnAndArea" parameterType="Search" resultType="testData">
+        select top 20 ${selectKind}  from ${selectArea}
+    </select>
 </mapper>

@@ -16,4 +16,5 @@ public interface testMapper {
     List<testData> findByTime(String date);
     List<testData> findByNameAndTime(Search search);
     List<testData> findByColumn(Search search);
+    List<testData> findByColumnAndArea(Search search);
 }

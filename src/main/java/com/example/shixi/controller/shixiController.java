@@ -24,44 +24,84 @@ public class shixiController {
     @PostMapping("result")
 
     public List<HashMap<String, Integer>> list(@RequestBody Search search,HttpServletResponse response) throws Exception{
-        List<testData> list2=testMapper.findByColumn(search);
+        List<testData> list2=null;
         System.out.println(search.getSelectKind()+"\n"+search.getSelectDate()+"\n"+search.getSelectArea());
         List<HashMap<String, Integer>> list1=new ArrayList<>();
-
-        if (search.getSelectKind().equals("T1")){
-            for (int i = 0; i <list2.size() ; i++) {
-                HashMap<String, Integer> val=new HashMap<>();
-                val.put("name",i);
-                val.put("value",list2.get(i).getT1());
-                list1.add(val);
-            }
-        } else {
-            if (search.getSelectKind().equals("T2")){
+        System.out.println(search.getSelectDate().length());
+        if(search.getSelectDate().length()>0){
+            list2=testMapper.findByColumn(search);
+            if (search.getSelectKind().equals("T1")){
                 for (int i = 0; i <list2.size() ; i++) {
                     HashMap<String, Integer> val=new HashMap<>();
                     val.put("name",i);
-                    val.put("value",list2.get(i).getT2());
+                    val.put("value",list2.get(i).getT1());
                     list1.add(val);
                 }
-            }else {
-                if (search.getSelectKind().equals("T3")){
+            } else {
+                if (search.getSelectKind().equals("T2")){
                     for (int i = 0; i <list2.size() ; i++) {
                         HashMap<String, Integer> val=new HashMap<>();
                         val.put("name",i);
-                        val.put("value",list2.get(i).getT3());
+                        val.put("value",list2.get(i).getT2());
                         list1.add(val);
                     }
-                }
-                else {
-                    for (int i = 0; i <list2.size() ; i++) {
-                        HashMap<String, Integer> val=new HashMap<>();
-                        val.put("name",i);
-                        val.put("value",list2.get(i).getT4());
-                        list1.add(val);
+                }else {
+                    if (search.getSelectKind().equals("T3")){
+                        for (int i = 0; i <list2.size() ; i++) {
+                            HashMap<String, Integer> val=new HashMap<>();
+                            val.put("name",i);
+                            val.put("value",list2.get(i).getT3());
+                            list1.add(val);
+                        }
+                    }
+                    else {
+                        for (int i = 0; i <list2.size() ; i++) {
+                            HashMap<String, Integer> val=new HashMap<>();
+                            val.put("name",i);
+                            val.put("value",list2.get(i).getT4());
+                            list1.add(val);
+                        }
                     }
                 }
-            }
 
+            }
+        } else {
+            list2=testMapper.findByColumnAndArea(search);
+            if (search.getSelectKind().equals("T1")){
+                for (int i = 0; i <list2.size() ; i++) {
+                    HashMap<String, Integer> val=new HashMap<>();
+                    val.put("name",i);
+                    val.put("value",list2.get(i).getT1());
+                    list1.add(val);
+                }
+            } else {
+                if (search.getSelectKind().equals("T2")){
+                    for (int i = 0; i <list2.size() ; i++) {
+                        HashMap<String, Integer> val=new HashMap<>();
+                        val.put("name",i);
+                        val.put("value",list2.get(i).getT2());
+                        list1.add(val);
+                    }
+                }else {
+                    if (search.getSelectKind().equals("T3")){
+                        for (int i = 0; i <list2.size() ; i++) {
+                            HashMap<String, Integer> val=new HashMap<>();
+                            val.put("name",i);
+                            val.put("value",list2.get(i).getT3());
+                            list1.add(val);
+                        }
+                    }
+                    else {
+                        for (int i = 0; i <list2.size() ; i++) {
+                            HashMap<String, Integer> val=new HashMap<>();
+                            val.put("name",i);
+                            val.put("value",list2.get(i).getT4());
+                            list1.add(val);
+                        }
+                    }
+                }
+
+            }
         }
         return list1;
     }
