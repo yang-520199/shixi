@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Main-Class: com.example.shixi.ShixiApplication
+Class-Path: netty-resolver-4.1.52.Final.jar mybatis-spring-2.0.5.jar spr
+ ing-boot-starter-json-2.3.4.RELEASE.jar bcprov-jdk14-1.38.jar netty-cod
+ ec-4.1.52.Final.jar bcprov-jdk14-138.jar jackson-module-parameter-names
+ -2.11.2.jar log4j-core-2.13.2.jar spring-boot-starter-tomcat-2.3.4.RELE
+ ASE.jar netty-buffer-4.1.52.Final.jar logback-core-1.2.3.jar bctsp-jdk1
+ 4-1.38.jar reactive-streams-1.0.3.jar spring-boot-starter-web-2.3.4.REL
+ EASE.jar spring-data-commons-2.3.4.RELEASE.jar spring-data-redis-2.3.4.
+ RELEASE.jar freemarker-2.3.30.jar spring-jdbc-5.2.9.RELEASE.jar spring-
+ boot-2.3.4.RELEASE.jar jackson-annotations-2.11.2.jar spring-boot-devto
+ ols-2.3.4.RELEASE.jar bcmail-jdk14-1.38.jar mybatis-3.5.5.jar snakeyaml
+ -1.26.jar spring-tx-5.2.9.RELEASE.jar jackson-core-2.11.2.jar jackson-d
+ atabind-2.11.2.jar reactor-core-3.3.10.RELEASE.jar spring-webmvc-5.2.9.
+ RELEASE.jar tomcat-embed-websocket-9.0.38.jar spring-web-5.2.9.RELEASE.
+ jar log4j-api-2.13.3.jar spring-beans-5.2.9.RELEASE.jar spring-context-
+ 5.2.9.RELEASE.jar netty-handler-4.1.52.Final.jar mybatis-spring-boot-au
+ toconfigure-2.1.3.jar netty-transport-4.1.52.Final.jar slf4j-api-1.7.30
+ .jar mysql-connector-java-8.0.21.jar HikariCP-3.4.5.jar jfreechart-1.0.
+ 19.jar spring-oxm-5.2.9.RELEASE.jar jakarta.annotation-api-1.3.5.jar my
+ batis-spring-boot-starter-2.1.3.jar logback-classic-1.2.3.jar spring-bo
+ ot-starter-jdbc-2.3.4.RELEASE.jar spring-context-support-5.2.9.RELEASE.
+ jar spring-data-keyvalue-2.3.4.RELEASE.jar jackson-datatype-jsr310-2.11
+ .2.jar itextpdf-5.4.3.jar spring-boot-starter-freemarker-2.3.4.RELEASE.
+ jar spring-boot-starter-2.3.4.RELEASE.jar tomcat-embed-core-9.0.38.jar 
+ spring-core-5.2.9.RELEASE.jar sqljdbc4.jar jackson-datatype-jdk8-2.11.2
+ .jar bcmail-jdk14-138.jar itext-2.1.7.jar lettuce-core-5.3.4.RELEASE.ja
+ r jul-to-slf4j-1.7.30.jar spring-expression-5.2.9.RELEASE.jar spring-bo
+ ot-starter-data-redis-2.3.4.RELEASE.jar spring-aop-5.2.9.RELEASE.jar sp
+ ring-boot-starter-logging-2.3.4.RELEASE.jar spring-jcl-5.2.9.RELEASE.ja
+ r jakarta.el-3.0.3.jar assertj-core-3.16.1.jar log4j-to-slf4j-2.13.3.ja
+ r itext-asian-5.2.0.jar spring-boot-autoconfigure-2.3.4.RELEASE.jar jco
+ mmon-1.0.23.jar netty-common-4.1.52.Final.jar
+

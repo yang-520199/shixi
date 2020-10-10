@@ -35,6 +35,7 @@ public class TestController {
     @ResponseBody
     public List<testData> list(HttpServletResponse response, @RequestParam("table_name") String table_name) throws Exception{
         List<testData> list=testMapper.findByName("V10000");
+        System.out.println(table_name);
         return list;
     }
     @CrossOrigin
@@ -55,6 +56,7 @@ public class TestController {
                 list=testMapper.findByName(search.getSelectArea());
             }
         }
+        System.out.println(list);
         return list;
     }
 }

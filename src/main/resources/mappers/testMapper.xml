@@ -5,7 +5,8 @@
         select top 10  T1,T2,T3  from V10000 where 1=1
     </select>
     <select id="findByName" parameterType="String" resultType="testData" statementType="STATEMENT">
-        select  top 50 *  from ${table_name} ORDER BY ReportTime desc
+--         select  top 50 *  from ${table_name} ORDER BY ReportTime desc
+        select  top 20 *  from ${table_name}
     </select>
     <select id="findByTime" resultType="testData" parameterType="String">
 --         select top 10  T1,T2,T3  from V10000 where 1=1
@@ -19,5 +20,13 @@
     </select>
     <select id="findByColumnAndArea" parameterType="Search" resultType="testData">
         select top 20 ${selectKind}  from ${selectArea}
+    </select>
+    <select id="findPage" parameterType="Pager" resultType="testData">
+        select   *   from
+    (select   *,   ROW_NUMBER()   OVER   (order   by   ReportTime)   AS   ROWNUM   from  ${selectArea} ) t
+where   ROWNUM   between   #{begin}   and  #{end}
+    </select>
+    <select id="findPageCount" parameterType="String" resultType="Integer">
+        select count (*) from ${table_name}
     </select>
 </mapper>
