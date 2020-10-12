@@ -20,4 +20,6 @@ public interface testMapper {
     List<testData> findByColumnAndArea(Search search);
     List<testData> findPage(Pager pager);
     List<Integer> findPageCount(String table_name);
+    List<Integer> findPageCount1(Search search);
+    List<testData> findPage1(Pager pager);
 }

@@ -1,8 +1,24 @@
 package com.example.shixi.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 public class testData implements Serializable {
+  private  Timestamp ReportTime;
+
+    public Timestamp getReportTime() {
+        return ReportTime;
+    }
+
+    public void setReportTime(Timestamp reportTime) {
+        ReportTime = reportTime;
+    }
+
     private int T1;
     private int T2;
     private int T3;
@@ -421,7 +437,8 @@ public class testData implements Serializable {
     @Override
     public String toString() {
         return "testData{" +
-                "T1=" + T1 +
+                "ReportTime=" + ReportTime +
+                ", T1=" + T1 +
                 ", T2=" + T2 +
                 ", T3=" + T3 +
                 ", T4=" + T4 +

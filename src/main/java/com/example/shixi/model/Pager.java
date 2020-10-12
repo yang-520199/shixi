@@ -6,6 +6,15 @@ public class Pager implements Serializable {
     private int begin;
     private int end;
     private String selectArea;
+    private String selectDate;
+
+    public String getSelectDate() {
+        return selectDate;
+    }
+
+    public void setSelectDate(String selectDate) {
+        this.selectDate = selectDate;
+    }
 
     public String getSelectArea() {
         return selectArea;

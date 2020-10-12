@@ -8,7 +8,7 @@ public class pagCount {
     }
 
     public void setPageCount(int pageCount) {
-        this.pageCount = pageCount/20;
+        this.pageCount = pageCount/20+1;
     }
 
     @Override

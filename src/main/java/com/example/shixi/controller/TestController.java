@@ -23,11 +23,12 @@ public class TestController {
         List<HashMap<String, Object>> bList = EcDtUtils.getBarRndVal();
         return bList;
     }
+    @CrossOrigin
     @RequestMapping("/aa")
     @ResponseBody
     public List<testData> tset(){
-        List<testData> list=testMapper.findByTime("2020-03-01");
-        System.out.println(list.get(1).getT1());
+        List<testData> list=testMapper.findByTime("2017-10-08");
+        System.out.println(list.get(1).getReportTime());
         return list;
     }
     @CrossOrigin

@@ -10,10 +10,10 @@
     </select>
     <select id="findByTime" resultType="testData" parameterType="String">
 --         select top 10  T1,T2,T3  from V10000 where 1=1
-        select top 10  T1,T2,T3 from V10025 where 1=1 AND convert(date,ReportTime) like #{date}
+        select top 20  ReportTime,T1,T2,T3 from V10000 where 1=1 AND convert(date,ReportTime) like #{date}
     </select>
     <select id="findByNameAndTime" parameterType="Search"  resultType="testData">
-        select top 50  *  from ${selectArea}  where convert(date,ReportTime) like #{selectDate}
+        select  top 20 *  from ${selectArea}  where convert(date,ReportTime) like #{selectDate}
     </select>
     <select id="findByColumn" parameterType="Search" resultType="testData">
         select top 20 ${selectKind},ReportTime  from ${selectArea} where convert(date,ReportTime) like #{selectDate}
@@ -28,5 +28,15 @@ where   ROWNUM   between   #{begin}   and  #{end}
     </select>
     <select id="findPageCount" parameterType="String" resultType="Integer">
         select count (*) from ${table_name}
+    </select>
+
+    <select id="findPageCount1" parameterType="String" resultType="Integer">
+        select count(*) from (select * from ${selectArea} where  convert(date,ReportTime) like #{selectDate}) t;
+    </select>
+
+    <select id="findPage1" parameterType="Pager" resultType="testData">
+       select   *   from
+    (select *,ROW_NUMBER()   OVER   (order   by   ReportTime)   AS   ROWNUM from (select * from ${selectArea} where convert(date,ReportTime) like #{selectDate} ) a ) t
+where   ROWNUM   between   #{begin}   and  #{end}
     </select>
 </mapper>
