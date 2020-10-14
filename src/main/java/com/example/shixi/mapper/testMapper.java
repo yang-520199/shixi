@@ -22,4 +22,5 @@ public interface testMapper {
     List<Integer> findPageCount(String table_name);
     List<Integer> findPageCount1(Search search);
     List<testData> findPage1(Pager pager);
+    List<testData> detectionData(String table_name);
 }

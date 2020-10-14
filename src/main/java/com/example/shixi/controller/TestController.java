@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 @RestController
@@ -26,10 +27,23 @@ public class TestController {
     @CrossOrigin
     @RequestMapping("/aa")
     @ResponseBody
-    public List<testData> tset(){
-        List<testData> list=testMapper.findByTime("2017-10-08");
-        System.out.println(list.get(1).getReportTime());
-        return list;
+    public List tset(){
+        List<testData> list=testMapper.findByName("V10000");
+        System.out.println(list);
+        System.out.println(list.size());
+        String[] xarr = new String[list.size()];//为了保证不出现空指针
+        System.out.println(xarr.length);
+        Integer[] yarr = new Integer[list.size()];
+        for (int i = 0 ; i < list.size(); i++) {
+            xarr[i] = list.get(i).getReportTime().toString();//x轴的数据
+            yarr[i] = list.get(i).getT1();//y轴的数据
+        }
+        List list2 = new ArrayList();
+        list2.add(xarr);
+        list2.add(yarr);
+        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx");//写这个是为了自己在控制台检测咱们的异步交互是否是实时进行的,如果是,控制台会一直打印这个xxx
+        System.out.println(xarr.length);
+        return list2;
     }
     @CrossOrigin
     @RequestMapping("/testData")

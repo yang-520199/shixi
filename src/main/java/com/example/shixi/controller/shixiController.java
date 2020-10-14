@@ -21,9 +21,7 @@ public class shixiController {
 
     public List<HashMap<String, Object>> list(@RequestBody Search search, HttpServletResponse response) throws Exception{
         List<testData> list2=null;
-        System.out.println(search.getSelectKind()+"\n"+search.getSelectDate()+"\n"+search.getSelectArea());
         List<HashMap<String, Object>> list1=new ArrayList<>();
-        System.out.println(search.getSelectDate().length());
         if(search.getSelectDate().length()>0){
             list2=testMapper.findByColumn(search);
 
@@ -38,7 +36,7 @@ public class shixiController {
                 if (search.getSelectKind().equals("T2")){
                     for (int i = 0; i <list2.size() ; i++) {
                         HashMap<String, Object> val=new HashMap<>();
-                        val.put("name",i);
+                        val.put("name",list2.get(i).getReportTime().toString());
                         val.put("value",list2.get(i).getT2());
                         list1.add(val);
                     }
@@ -46,7 +44,7 @@ public class shixiController {
                     if (search.getSelectKind().equals("T3")){
                         for (int i = 0; i <list2.size() ; i++) {
                             HashMap<String, Object> val=new HashMap<>();
-                            val.put("name",i);
+                            val.put("name",list2.get(i).getReportTime().toString());
                             val.put("value",list2.get(i).getT3());
                             list1.add(val);
                         }
@@ -54,7 +52,7 @@ public class shixiController {
                     else {
                         for (int i = 0; i <list2.size() ; i++) {
                             HashMap<String, Object> val=new HashMap<>();
-                            val.put("name",i);
+                            val.put("name",list2.get(i).getReportTime().toString());
                             val.put("value",list2.get(i).getT4());
                             list1.add(val);
                         }
@@ -67,7 +65,7 @@ public class shixiController {
             if (search.getSelectKind().equals("T1")){
                 for (int i = 0; i <list2.size() ; i++) {
                     HashMap<String, Object> val=new HashMap<>();
-                    val.put("name",i);
+                    val.put("name",list2.get(i).getReportTime().toString());
                     val.put("value",list2.get(i).getT1());
                     list1.add(val);
                 }
@@ -75,7 +73,7 @@ public class shixiController {
                 if (search.getSelectKind().equals("T2")){
                     for (int i = 0; i <list2.size() ; i++) {
                         HashMap<String, Object> val=new HashMap<>();
-                        val.put("name",i);
+                        val.put("name",list2.get(i).getReportTime().toString());
                         val.put("value",list2.get(i).getT2());
                         list1.add(val);
                     }
@@ -83,7 +81,7 @@ public class shixiController {
                     if (search.getSelectKind().equals("T3")){
                         for (int i = 0; i <list2.size() ; i++) {
                             HashMap<String, Object> val=new HashMap<>();
-                            val.put("name",i);
+                            val.put("name",list2.get(i).getReportTime().toString());
                             val.put("value",list2.get(i).getT3());
                             list1.add(val);
                         }
@@ -91,7 +89,7 @@ public class shixiController {
                     else {
                         for (int i = 0; i <list2.size() ; i++) {
                             HashMap<String, Object> val=new HashMap<>();
-                            val.put("name",i);
+                            val.put("name",list2.get(i).getReportTime().toString());
                             val.put("value",list2.get(i).getT4());
                             list1.add(val);
                         }

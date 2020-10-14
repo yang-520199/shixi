@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.shixi.mapper.testMapper">
     <select id="findAll" resultType="testData">
-        select top 10  T1,T2,T3  from V10000 where 1=1
+        select top 10  T1,T2,T3 ,ReportTime from V10000 where 1=1
     </select>
     <select id="findByName" parameterType="String" resultType="testData" statementType="STATEMENT">
 --         select  top 50 *  from ${table_name} ORDER BY ReportTime desc
@@ -19,7 +19,7 @@
         select top 20 ${selectKind},ReportTime  from ${selectArea} where convert(date,ReportTime) like #{selectDate}
     </select>
     <select id="findByColumnAndArea" parameterType="Search" resultType="testData">
-        select top 20 ${selectKind}  from ${selectArea}
+        select top 20 ${selectKind} ,ReportTime  from ${selectArea}
     </select>
     <select id="findPage" parameterType="Pager" resultType="testData">
         select   *   from
@@ -38,5 +38,9 @@ where   ROWNUM   between   #{begin}   and  #{end}
        select   *   from
     (select *,ROW_NUMBER()   OVER   (order   by   ReportTime)   AS   ROWNUM from (select * from ${selectArea} where convert(date,ReportTime) like #{selectDate} ) a ) t
 where   ROWNUM   between   #{begin}   and  #{end}
+    </select>
+
+    <select id="detectionData" parameterType="String" resultType="testData">
+        select * from (select top 50 * from ${table_name} order by ReportTime desc) t order by ReportTime;
     </select>
 </mapper>
